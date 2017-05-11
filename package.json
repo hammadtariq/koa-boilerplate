@@ -2,8 +2,15 @@
   "name": "koa-boilerplate",
   "version": "0.1.0",
   "private": true,
+  "author": {
+    "email": "hammadtariq65@gmail.com",
+    "name": "Hammad Tariq"
+  },
+  "keywords": [
+    "koa","koa2","node","js","babel"
+  ],
   "scripts": {
-    "start": "node bin/server.js",
+    "start": "npm run build && node bin/server.js",
     "dev": "./node_modules/.bin/nodemon bin/server.js",
     "prd": "pm2 start bin/server.js",
     "test": "echo \"Error: no test specified\" && exit 1",

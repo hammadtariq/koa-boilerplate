@@ -1,11 +1,11 @@
 import 'babel-polyfill';
 import Koa from 'koa';
+import views from 'koa-views';
+import json from 'koa-json';
+import onerror from 'koa-onerror';
+import bodyParser from 'koa-bodyparser'
+import KoaLogger from 'koa-logger';
 const app = new Koa();
-const views = require('koa-views');
-const json = require('koa-json');
-const onerror = require('koa-onerror');
-const bodyparser = require('koa-bodyparser')();
-const logger = require('koa-logger');
 
 const index = require('./routes/index');
 const users = require('./routes/users');
@@ -14,9 +14,9 @@ const users = require('./routes/users');
 onerror(app);
 
 // middlewares
-app.use(bodyparser);
+app.use(bodyParser());
 app.use(json());
-app.use(logger());
+app.use(KoaLogger());
 app.use(require('koa-static')(__dirname + '/public'));
 
 app.use(views(__dirname + '/views', {
