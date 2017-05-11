@@ -1,11 +1,11 @@
 {
-  "name": "koa-demo1",
+  "name": "koa-boilerplate",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "node bin/www.js",
-    "dev": "./node_modules/.bin/nodemon bin/www.js",
-    "prd": "pm2 start bin/www.js",
+    "start": "node bin/server.js",
+    "dev": "./node_modules/.bin/nodemon bin/server.js",
+    "prd": "pm2 start bin/server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "babel bin/www.js -o bin/server.js"
   },
